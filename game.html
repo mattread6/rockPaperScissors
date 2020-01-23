@@ -1,31 +1,35 @@
 <script>
-    function computerPlay(){
-        var values = ['Rock', "Paper", "Scissors"],
-        valuesToUse = values[Math.floor(Math.random()*values.length)];
-    }
-    
-    function playRound(playerSelection, computerSelection){
-        var playerSelection = prompt("Rock, Paper or Scissors?");
-        playerSelection.toLowerCase();
-        var computerSelection = computerPlay();
-        if(playerSelection == computerPlay){
-            console.log("Looks like its a draw! Play Again!");
-        } else if(playerSelection == "rock" && computerPlay == "Paper"){
-            console.log("Looks like your got covered up by paper!");
-            }else if(playerSelection=="paper" && computerPlay == "Scissors"){
-                console.log("You got cut by scissors! Play Again!");
-            } else if(playerSelection=="scissors" && computerPlay== "Rock"){
-                console.log("Smashed by Rock! Play Again!");
-            } else{
-                console.log("Looks like you outwitted the computer, another go?");
-            }
-    }
+    function computerPlay() {
+    var values = ["Rock", "Paper", "Scissors"],
+    valuesToUse = values[Math.floor(Math.random() * values.length)];
+    return valuesToUse;
+}
 
-    function game(){
-    for(i = 0, i<5, i++){
-        playRound();
-    }  
+function playRound(playerSelection, computerSelection) {
+    var playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+    var computerSelection = computerPlay();
+  
+    if (playerSelection == computerPlay()) {
+    console.log("Looks like its a draw! Play Again!");
     }
-    game();
+    else if (playerSelection == "rock" && computerPlay() == "Paper") {
+    console.log("Looks like your got covered up by paper!");
+     }
+    else if (playerSelection == "paper" && computerPlay() == "Scissors") {
+    console.log("You got cut by scissors! Play Again!");
+    }
+    else if (playerSelection == "scissors" && computerPlay() == "Rock") {
+    console.log("Smashed by Rock! Play Again!");
+    }
+     else {
+    console.log("Looks like you outwitted the computer, another go?");
+  }
+}
 
+function game() {
+    for (i = 0; i < 5; i++) {
+    playRound();
+    }
+}
+game();
 </script>
